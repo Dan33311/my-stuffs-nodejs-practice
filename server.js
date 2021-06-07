@@ -1,9 +1,15 @@
 const express = require('express');
 const app = express();
+const routes = require('./routes/router');
 
 
 
 
-app.listen(5000, () => {
-  console.log('Listening on port 5000');
+app.use(express.json());
+
+app.use('/', routes);
+
+
+app.listen(3060, () => {
+  console.log('Listening on port 3060');
 });
