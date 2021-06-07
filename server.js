@@ -7,7 +7,7 @@ const routes = require('./routes/router');
 
 app.use(express.json());
 
-app.use('/', routes);
+app.use('/students', routes);
 
 
 app.listen(3060, () => {

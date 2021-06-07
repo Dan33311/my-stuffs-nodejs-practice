@@ -1,6 +1,6 @@
 let students = [{
-  name: "Stephler",
-  lastName: "Master",
+  name: "Shelldom",
+  lastName: "Cooper",
   level: "Basic-2",
   year: 2013
 }]
