@@ -4,12 +4,16 @@ const Student = require('../db/model')
 const router = express.Router();
 
 
+//  -----  GET  -----
+// router.get('/', (req, res) => {   // "TNN"
+//   res.send({type: 'GET'});
+// });
 
-router.get('/', (req, res) => {
-  
-  res.send({type: 'GET'});
+// Browser
+router.get('/', async (req, res) => {
+  const students = await Student.find({});
+  res.send(students);  
 });
-
 
 //  -----  POST  -----
 // Test 1   "TNN"
@@ -40,5 +44,36 @@ router.post('/cuatro', async (req, res) => {
   }
 });
 
+//  -----  PATCH  -----
+router.patch('/:id', async (req, res) => {
+  try {
+    let student = await Student.findByIdAndUpdate(req.params.id, req.body);
+    res.send(student);  
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+//  -----  DELETE  -----
+router.patch('/:id', async (req, res) => {
+  
+  res.send(students);  
+});
+
+//  -----  GET BY ID  -----
+router.patch('/:id', async (req, res) => {
+  
+  res.send(students);  
+});
 
 module.exports = router
+
+// GET  --  with try catch
+// router.get('/', async (req, res) => {
+//   const students = await Student.find({});
+//   try {
+//     res.send(students);  
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });

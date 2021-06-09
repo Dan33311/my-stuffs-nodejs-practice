@@ -18,7 +18,6 @@ try {
   console.log(error);
 }
 
-
 app.use(express.json());
 app.use('/students', routes_mongoose)
 
